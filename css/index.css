@@ -1,0 +1,190 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: var(--background-color);
+    color: var(--text-color);
+}
+
+/* Стили для шапки */
+header {
+    background-color: var(--header-bg);
+    padding: 20px 0;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.header-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo img {
+    height: 50px;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 30px;
+    align-items: center;
+}
+
+nav li {
+    display: flex;
+    align-items: center;
+}
+
+nav a {
+    text-decoration: none;
+    color: var(--header-text-color);
+    font-weight: bold;
+}
+
+nav a:hover {
+    opacity: 0.8;
+}
+
+/* Стили для основного контента */
+main {
+    margin-top: 90px; /* Добавляем отступ сверху равный высоте шапки */
+}
+
+.container {
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+.article-block {
+    display: flex;
+    margin-bottom: 40px;
+    height: 350px;
+    background-color: var(--article-bg);
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    border: 1px solid var(--border-color);
+}
+
+.article-image {
+    width: 500px;
+    overflow: hidden;
+}
+
+.article-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.article-content {
+    flex: 1;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.article-content h2 {
+    margin-bottom: 15px;
+    color: var(--text-color);
+}
+
+.article-content p {
+    color: var(--text-color);
+    opacity: 0.8;
+    line-height: 1.6;
+}
+
+/* Зеркальное отображение для четных блоков */
+.article-block.reverse {
+    flex-direction: row-reverse;
+}
+
+/* Стили для футера */
+footer {
+    background-color: var(--footer-bg);
+    color: var(--text-color);
+    padding: 20px 0;
+    border-top: 1px solid var(--border-color);
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    text-align: center;
+}
+
+.theme-toggle {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 8px;
+    font-size: 1.2rem;
+    color: var(--header-text-color);
+    display: flex;
+    align-items: center;
+    height: 100%;
+}
+
+.theme-toggle:hover {
+    opacity: 0.8;
+}
+
+:root[data-theme="light"] {
+    --background-color: #ffffff;
+    --text-color: #333333;
+    --header-bg: #007a23;
+    --header-text-color: #ffffff;
+    --footer-bg: #f8f8f8;
+    --article-bg: #ffffff;
+    --border-color: #e0e0e0;
+
+}
+
+:root[data-theme="dark"] {
+    --background-color: #1a1a1a;
+    --text-color: #ffffff;
+    --header-bg: #007a23;
+    --header-text-color: #ffffff;
+    --footer-bg: #2d2d2d;
+    --article-bg: #2d2d2d;
+    --border-color: #404040;
+
+}
+
+/* Стили для полоски прокрутки */
+::-webkit-scrollbar {
+    width: 12px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--background-color);
+}
+
+::-webkit-scrollbar-thumb {
+    background: #007a23;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #006118;
+}
+
+/* Для Firefox */
+* {
+    scrollbar-width: thin;
+    scrollbar-color: #007a23 var(--background-color);
+} 
